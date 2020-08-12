@@ -8,13 +8,13 @@ import './Goat.scss';
 class Goat extends React.Component {
   static propTypes = {
     goat: goatShape.goatShape,
-    changeGoatStatus: PropTypes.func,
+    toggleGoatStatus: PropTypes.func,
   }
 
   goatStatusEvent = (e) => {
     e.preventDefault();
-    const { goat, changeGoatStatus } = this.props;
-    changeGoatStatus(goat.id);
+    const { goat, toggleGoatStatus } = this.props;
+    toggleGoatStatus(goat.id);
   }
 
   render() {

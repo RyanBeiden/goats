@@ -9,16 +9,16 @@ import './GoatCorral.scss';
 class GoatCorral extends React.Component {
   static propTypes = {
     goats: PropTypes.arrayOf(goatShape.goatShape),
-    changeGoatStatus: PropTypes.func,
+    toggleGoatStatus: PropTypes.func,
   }
 
   render() {
     const {
-      goats, changeGoatStatus,
+      goats, toggleGoatStatus,
     } = this.props;
 
     const goatCards = goats.map((goat) => (
-      <Goat key={goat.id} goat={goat} changeGoatStatus={changeGoatStatus}/>
+      <Goat key={goat.id} goat={goat} toggleGoatStatus={toggleGoatStatus}/>
     ));
 
     return (
