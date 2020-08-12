@@ -15,8 +15,8 @@ class App extends React.Component {
     this.setState({ goats });
   }
 
-  changeGoatStatus = (goatId) => {
-    goatData.goatStatus(goatId);
+  toggleGoatStatus = (goatId) => {
+    goatData.toggleGoat(goatId);
     const goats = goatData.getGoats();
     this.setState({ goats });
   }
@@ -27,7 +27,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <h1><span role="img" aria-label="goat emoji">🐐</span> Goats</h1>
-        <GoatCorral goats={goats} changeGoatStatus={this.changeGoatStatus}/>
+        <GoatCorral goats={goats} toggleGoatStatus={this.toggleGoatStatus}/>
       </div>
     );
   }

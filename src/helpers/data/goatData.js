@@ -43,17 +43,12 @@ const goats = [
 
 const getGoats = () => goats;
 
-const goatStatus = (goatId) => {
-  goats.forEach((response) => {
-    if ((response.id === goatId) && (response.isTaken === false)) {
-      response.isTaken = true;
-    } else if ((response.id === goatId) && (response.isTaken === true)) {
-      response.isTaken = false;
-    }
-  });
+const toggleGoat = (goatId) => {
+  const foundGoat = goats.findIndex((goat) => goat.id === goatId);
+  goats[foundGoat].isTaken = !goats[foundGoat].isTaken;
 };
 
 export default {
   getGoats,
-  goatStatus,
+  toggleGoat,
 };
