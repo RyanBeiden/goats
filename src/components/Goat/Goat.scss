@@ -1,4 +1,13 @@
 .goatCard {
   width: 250px;
   margin: 15px;
+
+  .card-title,
+  .card-text {
+    color: whitesmoke;
+    border: 1px solid whitesmoke;
+    border-radius: .25em;
+
+    padding: 10px 5px;
+  }
 }
