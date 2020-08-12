@@ -5,7 +5,7 @@ const goats = [
     age: 2,
     description: 'I like Yoga!',
     imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/b/b2/Hausziege_04.jpg',
-    isBusy: true,
+    isTaken: true,
   },
   {
     id: 'goat2',
@@ -13,7 +13,7 @@ const goats = [
     age: 85,
     description: 'I like eating grass.',
     imgUrl: 'https://pbs.twimg.com/profile_images/980547001166295041/eBs20xF4.jpg',
-    isBusy: true,
+    isTaken: true,
   },
   {
     id: 'goat3',
@@ -21,7 +21,7 @@ const goats = [
     age: 18,
     description: 'SHHHHHHH',
     imgUrl: 'https://ichef.bbci.co.uk/news/1024/cpsprodpb/C271/production/_98677794_gettyimages-486869012.jpg',
-    isBusy: false,
+    isTaken: false,
   },
   {
     id: 'goat4',
@@ -29,7 +29,7 @@ const goats = [
     age: 1,
     description: 'RAWRRRR',
     imgUrl: 'https://i.ytimg.com/vi/cEJy2q27hVk/maxresdefault.jpg',
-    isBusy: false,
+    isTaken: false,
   },
   {
     id: 'goat5',
@@ -37,10 +37,23 @@ const goats = [
     age: 0.5,
     description: 'Nope',
     imgUrl: 'https://www.psephizo.com/wp-content/uploads/2018/09/1438297793139.jpeg',
-    isBusy: false,
+    isTaken: false,
   },
 ];
 
 const getGoats = () => goats;
 
-export default { getGoats };
+const goatStatus = (goatId) => {
+  goats.forEach((response) => {
+    if ((response.id === goatId) && (response.isTaken === false)) {
+      response.isTaken = true;
+    } else if ((response.id === goatId) && (response.isTaken === true)) {
+      response.isTaken = false;
+    }
+  });
+};
+
+export default {
+  getGoats,
+  goatStatus,
+};
